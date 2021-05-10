@@ -1,32 +1,8 @@
 Assessment
 
-The required data structure 
-[{
-"heartRate":80
-},{
-"someOtherMeasure":70
-},{
-"anotherMeasure":50
-}
-]
-was it a List of objects with key / value but without unique key integrity.
+Please use an existing user / loaded in LoadDatabase controller.
 
-As the intention described was key / value more than a simple list of objects,
-I don't know if it was made on purpose, ans as I can't ask question, 
-I decided to change to a slighly different interface with a hashMap - so with uique keys.
-
-In normal condition I would never decide before asking, but as this is an assessment, 
-I decided to underline this issue.
-
-
-{
-"heartRate":80.0
-,
-"someOtherMeasure":70.0
-,
-"anotherMeasure":50.0
-}
-
+*Warning* - sample data structure is not exactly the same as requested. Explanation here below.
 
 Sample data :
 
@@ -43,3 +19,35 @@ Sample data :
 
 }
 
+NOTE - data key/value change
+
+The original required data structure was a 'List of objects' with key / value but without unique key integrity.
+
+[{
+"heartRate":80
+},{
+"someOtherMeasure":70
+},{
+"anotherMeasure":50
+}]
+
+However, my understanding was the followings :
+
+A session retrieves a collection of values.
+1 key of 1 session has only 1 value (?)
+
+As I cant ask about that understanding issue, 
+I took the decision to propose a change to a slighly different interface with a hashMap.
+My understanding is that is more sounds aligned with the description.
+
+The resulting implementation describes my understanding of the situation : a Hashmap of key/value stream linked to a Session.
+
+
+
+{
+"heartRate":80.0
+,
+"someOtherMeasure":70.0
+,
+"anotherMeasure":50.0
+}
